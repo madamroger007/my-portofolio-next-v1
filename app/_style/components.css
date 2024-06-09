@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .icon-home li{
+      @apply text-2xl text-blue-600;
+    }
+  }
+  @layer utilities {
+    .shadow-top {
+      @apply shadow-md;
+      box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .shadow-top {
+      box-shadow: 0 -10px 15px -3px rgba(28, 57, 97, 0.5), 0 -4px 6px -4px rgba(36, 78, 136, 0.5); /* Slate color for dark mode */
+    }
+    
+  }
