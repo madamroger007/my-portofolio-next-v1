@@ -7,7 +7,7 @@ export default function Home() {
     <LayoutComponent>
 
     
-    <section className="w-full pt-20 pb-52">
+    <section className="w-full pt-14 pb-52">
       <BgHeroSection/>
     </section>
     </LayoutComponent>

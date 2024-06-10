@@ -2,6 +2,7 @@ import React from 'react'
 import CardReviewer from '../elemen/card/CardReviewer';
 import { CardSocialMedia } from '../elemen/card/CardSocialMedia';
 import { IconHero } from '../elemen/img/Icon';
+import { ManRounded } from '../elemen/img/ManRounded';
 const BgHeroSection = () => {
     return (
         <div className='grid lg:grid-cols-3 grid-cols-1 w-full '>
@@ -12,9 +13,7 @@ const BgHeroSection = () => {
                 </div>
             </div>
             <div className="row-span-5 flex justify-center max-lg:mt-20">
-                <div className='shadow-lg dark:shadow-blue-600 shadow-slate-500 rounded-full md:w-[400px] md:h-[400px] w-[350px] h-[350px] p-12  '>
-                <img src="/src/img/bg/man-removebg-preview.png" alt=""/>
-                </div>
+                <ManRounded/>
                 </div>
             <div className="w-full">
                 <div className='flex justify-center  max-lg:pt-10'>
