@@ -1,10 +1,11 @@
 import React from 'react'
 import { icon } from '@/lib/data.d'
+import { Card } from '@/types/types'
 
 const CardReviewer:React.FC<Card> = ({className}) => {
   return (
-    <div className={'p-5 grid grid-cols-2   shadow-xl dark:shadow-blue-600 shadow-slate-400  w-[320px] ' + className}>
-    <h6 className='font-poppins mb-5 text-[14px]'>Program Language</h6>
+    <div className={'p-5 grid grid-cols-2  shadow-lg dark:shadow-blue-600 shadow-slate-400  max-w-[320px] ' + className}>
+    <h6 className='font-poppins mb-5 text-[14px] dark:text-gray-300 text-gray-700'>Program Language</h6>
     <div className='ml-7 mb-5  text-[14px]'>⭐⭐⭐⭐⭐</div>
     <div className='flex '>
     {Object.entries(icon).slice(0, 7).map(([key, value]) => (
@@ -15,8 +16,8 @@ const CardReviewer:React.FC<Card> = ({className}) => {
         ))}
         
     </div>
-    <div className='ml-7'><h1 >4.9</h1></div>
+    <div className='ml-7'><h1 className='dark:text-gray-300 text-gray-700'>4.9</h1></div>
     </div>
   )
 }
-export default CardReviewer
+export default React.memo(CardReviewer)

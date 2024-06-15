@@ -1,3 +1,4 @@
+import { Card } from '@/types/types';
 import React from 'react'
 import { FaFacebook,FaInstagram,FaGithub,FaLinkedin } from "react-icons/fa";
 export const CardSocialMedia:React.FC<Card> = ({className}) => {

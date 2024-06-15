@@ -20,10 +20,10 @@ export const IconHero:React.FC<Icon> = ({className}) => {
                 </clipPath>
             </defs>
             <g clipPath="url(#00d46969fb)">
-                <path fill={theme === "light" ?"#000": "#fff"} d="M 220.847656 192.363281 L 254.40625 118.195312 L 306.757812 234.730469 L 353.992188 234.730469 L 281.757812 74.738281 L 229.320312 74.738281 L 197.523438 144.039062 Z M 220.847656 192.363281 " fillOpacity="1" fillRule="evenodd" />
+                <path className='dark:fill-white fill-black' d="M 220.847656 192.363281 L 254.40625 118.195312 L 306.757812 234.730469 L 353.992188 234.730469 L 281.757812 74.738281 L 229.320312 74.738281 L 197.523438 144.039062 Z M 220.847656 192.363281 " fillOpacity="1" fillRule="evenodd" />
             </g>
             <g clipPath="url(#1d04d7db90)">
-                <path fill={theme === "light" ?"#000": "#fff"} d="M 142.488281 74.738281 L 90.050781 74.738281 L 21.003906 234.730469 L 69.160156 234.730469 L 118.996094 118.195312 L 206 300.253906 L 227.726562 252.265625 Z M 142.488281 74.738281 " fillOpacity="1" fillRule="evenodd" />
+                <path className='dark:fill-white fill-black' d="M 142.488281 74.738281 L 90.050781 74.738281 L 21.003906 234.730469 L 69.160156 234.730469 L 118.996094 118.195312 L 206 300.253906 L 227.726562 252.265625 Z M 142.488281 74.738281 " fillOpacity="1" fillRule="evenodd" />
             </g>
         </svg>
     );

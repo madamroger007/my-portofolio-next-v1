@@ -1,9 +1,14 @@
-import LayoutComponent from '@/components/layout'
+import LayoutComponent from '@/components/layout/layout'
 import React from 'react'
+import SkillField from './_section/SkillField'
 
 function page() {
   return (
-    <LayoutComponent>page</LayoutComponent>
+    <LayoutComponent>
+      <section>
+        <SkillField/>
+      </section>
+    </LayoutComponent>
   )
 }
 
