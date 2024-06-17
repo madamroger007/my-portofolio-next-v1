@@ -1,5 +1,5 @@
 "use client"
-import  ButtonPrimary from '@/components/elemen/button/ButtonPrimary'
+import ButtonPrimary from '@/components/elemen/button/ButtonPrimary'
 import { MeImage } from '@/components/elemen/img/MeImage'
 import TypewriterHook from '@/components/elemen/text/TypeWriterHook'
 import React from 'react'
@@ -12,9 +12,9 @@ const Introduction = () => {
         <section className='grid md:grid-cols-2 grid-cols-1 max-md:p-5'>
             <div className='md:pl-14 text-wrap'>
                 <div className='flex gap-5 items-center mb-10'>
-                    <div className='w-20 h-[1px] dark:bg-white bg-yellow-500'></div>
-                    <p className='font-light italic text-yellow-500 dark:text-white'>Web Developer</p>
-                    <div className='w-20 h-[1px] dark:bg-white bg-yellow-500'></div>
+                    <div className='w-20 h-[1px] dark:bg-white bg-gray-500'></div>
+                    <p className='font-light italic text-gray-500 dark:text-white'>Web Developer</p>
+                    <div className='w-20 h-[1px] dark:bg-white bg-gray-500'></div>
                 </div>
                 <h1 className='font-poppins text-3xl font-bold dark:text-gray-300 text-gray-700'>Introducing My Self</h1>
                 <div className='py-10'>
