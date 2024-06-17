@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import Colors from "tailwindcss/colors"
 const config = {
   darkMode: ["class"],
   content: [
@@ -29,6 +29,11 @@ const config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        gray: Colors.blueGray,
+        red: Colors.rose,
+        blue: Colors.sky,
+        green: Colors.emerald,
+        purple: Colors.violet,
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -82,6 +87,10 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      transitionDuration: {
+        '2000': '2000ms',
+        '3000': '3000ms',
+      }
     },
   },
   plugins: [require("tailwindcss-animate"), require("daisyui")],
