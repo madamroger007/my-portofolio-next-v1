@@ -1,10 +1,12 @@
 import LayoutComponent from '@/components/layout/layout'
 import React from 'react'
 
-function page() {
-  return (
-    <LayoutComponent>page</LayoutComponent>
-  )
+export default function page() {
+    return (
+        <LayoutComponent>
+        <section className="w-full pt-14 pb-52">
+          page
+        </section>
+      </LayoutComponent>
+    )
 }
-
-export default page
