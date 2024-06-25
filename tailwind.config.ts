@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
 import Colors from "tailwindcss/colors"
+const color ={
+  "white-100":"#FFF5E1"
+}
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -29,6 +33,7 @@ const config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        ...color,
         gray: Colors.blueGray,
         red: Colors.rose,
         blue: Colors.sky,

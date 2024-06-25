@@ -10,7 +10,7 @@ const BgHeroSection = () => {
             <div className="w-full flex lg:justify-center max-lg:pl-5">
                 <div>
                     <h3 className='text-3xl font-bubblegum dark:text-gray-300 text-gray-700'>Hy! I'm</h3>
-                    <h1 className='text-4xl font-poppins font-bold dark:text-blue-500 text-blue-600'>Adam Setiadi</h1>
+                    <h1 className='text-4xl font-poppins font-bold dark:text-blue-500 text-blue-600'>adam Setiadi</h1>
                 </div>
             </div>
             <div className="row-span-5 flex justify-center max-lg:mt-20">

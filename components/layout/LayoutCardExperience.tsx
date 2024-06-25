@@ -1,5 +1,5 @@
 import React from 'react'
-import CardComponentsExp, { CardComponentsExpProps } from './CardComponentsExp'
+import CardComponentsExp, { CardComponentsExpProps } from '../elemen/card/CardComponentsExp'
 
 const LayoutCardExperience = ({ title, subtitle, className, items }: { items: CardComponentsExpProps[], title: string, subtitle: string, className?: string, }) => {
   return (
