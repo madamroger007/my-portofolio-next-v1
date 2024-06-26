@@ -17,6 +17,7 @@ const BgHeroSection = () => {
                 <ManRounded/>
                 </div>
             <div className="w-full">
+                
                 <div className='flex justify-center  max-lg:pt-10'>
                 <h2 className='font-poppins text-center dark:text-gray-300 text-gray-700'>I am an app developer, marketing and designer</h2></div></div>
             <div className="col-3">

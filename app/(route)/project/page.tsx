@@ -9,7 +9,7 @@ function page() {
     <LayoutComponent>
     <section className="w-full pt-14 pb-52 flex flex-col gap-52">
       <ProjectCardSection items={projectItem}/>
-      <Videoproject/>
+      <Videoproject items={projectItem}/>
     </section>
   </LayoutComponent>
   )

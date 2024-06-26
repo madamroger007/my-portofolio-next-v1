@@ -1,14 +1,10 @@
-import React from 'react'
-import CardProject from '../elemen/card/CardProject'
-import { ProjectItem } from '@/lib/data.d'
+import React, { ReactNode } from 'react'
 
-const LayoutCardProject = ({ items }: { items: ProjectItem[] }) => {
+
+const LayoutCardProject = ({ children }: { children: ReactNode }) => {
   return (
-    <div className=' w-full grid max-md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center px-5 py-10'>
-      {items.map((item,index) => (
-        <CardProject key={index} title={item.title} desc={item.desc} icon={item.icon} img={item.img} />
-      ))}
-       
+    <div className='w-full flex flex-wrap justify-center gap-5 items-center px-5 py-10'>
+      {children}
     </div>
   )
 }

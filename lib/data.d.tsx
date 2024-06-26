@@ -224,115 +224,127 @@ export type ProjectItem = {
     title: string,
     desc: string,
     img: string,
+    link: string
     icon: IconProject[]
 }
 export type Project = {
-    name:string,
-    createdAt:string,
-    items:ProjectItem[]
+    name: string,
+    createdAt: string,
+    items: ProjectItem[]
 }
-export const projectItem:Project[] = [
-   {
-    name:"apps",
-    createdAt:"",
-    items:[
-        {
-            title:"Move.it",
-            desc:"Aplicação da NLW#04 da Rocketseat. Desenvolvida com React. Plataforma de Pomodoro com exercícios.",
-            img:"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
-            icon:[
-                {
-                    name: "Typescript",
-                    
-                    icon: "/src/img/icon/skill/fullstack/ts.png"
-                },
-                {
-                    name: "Next JS",
-              
-                    icon: "/src/img/icon/skill/fullstack/nextjs.png"
-                },
+export const projectItem: Project[] = [
+    {
+        name: "apps",
+        createdAt: "",
+        items: [
+            {
+                title: "Move.it",
+                desc: "Aplicação da NLW#04 da Rocketseat. Desenvolvida com React. Plataforma de Pomodoro com exercícios.",
+                img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+                link: "/project",
+                icon: [
+                    {
+                        name: "Typescript",
+
+                        icon: "/src/img/icon/skill/fullstack/ts.png"
+                    },
+                    {
+                        name: "Next JS",
+
+                        icon: "/src/img/icon/skill/fullstack/nextjs.png"
+                    },
+                ]
+            }, {
+                title: "ini judul",
+                desc: "lorem ipsadadasdadasds sdadasdadadsa",
+                img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+                link: "/project",
+
+                icon: [
+                    {
+                        name: "Typescript",
+
+                        icon: "/src/img/icon/skill/fullstack/ts.png"
+                    },
+                    {
+                        name: "Next JS",
+
+                        icon: "/src/img/icon/skill/fullstack/nextjs.png"
+                    },
+                ]
+            }, {
+                title: "ini judul",
+                desc: "lorem ipsadadasdadasds sdadasdadadsa",
+                img: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+                link: "/project",
+
+                icon: [
+                    {
+                        name: "Typescript",
+
+                        icon: "/src/img/icon/skill/fullstack/ts.png"
+                    },
+                    {
+                        name: "Next JS",
+
+                        icon: "/src/img/icon/skill/fullstack/nextjs.png"
+                    },
+                ]
+            }, {
+                title: "ini judul",
+                desc: "lorem ipsadadasdadasds sdadasdadadsa",
+                img: "",
+                link: "/project",
+
+                icon: [
+                    {
+                        name: "Typescript",
+
+                        icon: "/src/img/icon/skill/fullstack/ts.png"
+                    },
+                    {
+                        name: "Next JS",
+
+                        icon: "/src/img/icon/skill/fullstack/nextjs.png"
+                    },
+                ]
+            }, {
+                title: "ini judul",
+                desc: "lorem ipsadadasdadasds sdadasdadadsa",
+                img: "",
+                link: "/project",
+
+                icon: [
+                    {
+                        name: "Typescript",
+
+                        icon: "/src/img/icon/skill/fullstack/ts.png"
+                    },
+                    {
+                        name: "Next JS",
+
+                        icon: "/src/img/icon/skill/fullstack/nextjs.png"
+                    },
+                ]
+            }, {
+                title: "ini judul",
+                desc: "lorem ipsadadasdadasds sdadasdadadsa",
+                img: "",
+                link: "/project",
+
+                icon: [
+                    {
+                        name: "Typescript",
+
+                        icon: "/src/img/icon/skill/fullstack/ts.png"
+                    },
+                    {
+                        name: "Next JS",
+
+                        icon: "/src/img/icon/skill/fullstack/nextjs.png"
+                    },
+                ]
+            },
         ]
-        },{
-            title:"ini judul",
-            desc:"lorem ipsadadasdadasds sdadasdadadsa",
-            img:"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
-            icon:[
-                {
-                    name: "Typescript",
-                    
-                    icon: "/src/img/icon/skill/fullstack/ts.png"
-                },
-                {
-                    name: "Next JS",
-              
-                    icon: "/src/img/icon/skill/fullstack/nextjs.png"
-                },
-        ]
-        },{
-            title:"ini judul",
-            desc:"lorem ipsadadasdadasds sdadasdadadsa",
-            img:"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
-            icon:[
-                {
-                    name: "Typescript",
-                    
-                    icon: "/src/img/icon/skill/fullstack/ts.png"
-                },
-                {
-                    name: "Next JS",
-              
-                    icon: "/src/img/icon/skill/fullstack/nextjs.png"
-                },
-        ]
-        },{
-            title:"ini judul",
-            desc:"lorem ipsadadasdadasds sdadasdadadsa",
-            img:"",
-            icon:[
-                {
-                    name: "Typescript",
-                    
-                    icon: "/src/img/icon/skill/fullstack/ts.png"
-                },
-                {
-                    name: "Next JS",
-              
-                    icon: "/src/img/icon/skill/fullstack/nextjs.png"
-                },
-        ]
-        },{
-            title:"ini judul",
-            desc:"lorem ipsadadasdadasds sdadasdadadsa",
-            img:"",
-            icon:[
-                {
-                    name: "Typescript",
-                    
-                    icon: "/src/img/icon/skill/fullstack/ts.png"
-                },
-                {
-                    name: "Next JS",
-              
-                    icon: "/src/img/icon/skill/fullstack/nextjs.png"
-                },
-        ]
-        },{
-            title:"ini judul",
-            desc:"lorem ipsadadasdadasds sdadasdadadsa",
-            img:"",
-            icon:[
-                {
-                    name: "Typescript",
-                    
-                    icon: "/src/img/icon/skill/fullstack/ts.png"
-                },
-                {
-                    name: "Next JS",
-              
-                    icon: "/src/img/icon/skill/fullstack/nextjs.png"
-                },
-        ]
-        },
-    ]
-   }
+    }
 ]

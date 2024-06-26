@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
-import Colors from "tailwindcss/colors"
-const color ={
-  "white-100":"#FFF5E1"
-}
+import Colors from "tailwindcss/colors";
+const color = {
+  "white-100": "#FFF5E1",
+};
 
 const config = {
   darkMode: ["class"],
@@ -26,6 +26,7 @@ const config = {
         bubblegum: ["Bubblegum Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -93,9 +94,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       transitionDuration: {
-        '2000': '2000ms',
-        '3000': '3000ms',
-      }
+        "2000": "2000ms",
+        "3000": "3000ms",
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("daisyui")],
