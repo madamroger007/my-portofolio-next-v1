@@ -283,24 +283,6 @@ export const projectItem: Project[] = [
         ],
       },
       {
-        title: "LevelMusic",
-        desc: "Website landing page studio musik",
-        img: "/src/img/projek/levelmusik.png",
-        link: "https://madamroger007.github.io/LevelMusic",
-
-        icon: [
-          {
-            name: "HTML",
-
-            icon: "/src/img/icon/skill/frontend/html.png",
-          },
-          {
-            name: "CSS",
-            icon: "/src/img/icon/skill/frontend/css.png",
-          },
-        ],
-      },
-      {
         title: "Charity Comunity",
         desc: "Website Layanan Donasi bagi yang membutuhkan",
         img: "/src/img/projek/charity.png",

@@ -17,10 +17,10 @@ const Footer = () => {
 
                         <FaEnvelope />
                     </div>
-                    <div className='text-start '>
+                    <a href='mailto:adamsetiadijr07@gmail.com' className='text-start '>
                         <h1>Email</h1>
                         <p>adamsetiadijr07@gmai.com</p>
-                    </div>
+                    </a>
                 </a>
                 <a className="link link-hover flex flex-row gap-5">
                     <div className='rounded-full border w-8 h-8 dark:border-white border-slate-600 flex justify-center items-center'>
