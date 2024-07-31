@@ -1,8 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import CardReviewer from '@/components/elemen/card/CardReviewer'
 import { CardSocialMedia } from '@/components/elemen/card/CardSocialMedia'
 import { IconHero } from '@/components/elemen/img/Icon'
 import { ManRounded } from '@/components/elemen/img/ManRounded'
-import React from 'react'
+
 
 const BgHeroSection = () => {
     return (

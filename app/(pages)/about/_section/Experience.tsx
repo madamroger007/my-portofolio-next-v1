@@ -3,7 +3,7 @@ import { TiFlowChildren } from "react-icons/ti";
 import React from 'react'
 import TitleLiner from '@/components/elemen/text/TitleLiner';
 import LayoutCardExperience from '@/components/layout/LayoutCardExperience';
-import { PropsDataExp } from '@/lib/data.d';
+import { PropsDataExpSchool, PropsDataExpwork } from '@/lib/data.d';
 
 // Wrap LayoutCardExperience with memo
 const MemoizedLayoutCardExperience = React.memo(LayoutCardExperience, (prevProps, nextProps) => {
@@ -21,8 +21,8 @@ const Experience = () => {
         <TitleLiner title='Experience' />
       </section>
       <section className='grid md:grid-cols-2 grid-cols-1 max-md:items-center max-md:justify-center px-5 md:px-10 py-10 gap-10 '>
-        <MemoizedLayoutCardExperience items={PropsDataExp} subtitle='Experience' title='Work' key={"1"} className='dark:hover:bg-[rgba(168,110,240,.2)] hover:bg-[rgb(229,220,240)] cursor-pointer' />
-        <MemoizedLayoutCardExperience items={PropsDataExp} subtitle='Alumni' title='Academic' key={"1"} className='dark:hover:bg-[rgba(168,110,240,.2)] hover:bg-[rgb(229,220,240)] cursor-pointer' />
+        <MemoizedLayoutCardExperience items={PropsDataExpwork} subtitle='Experience' title='Work' key={"1"} className='dark:hover:bg-[rgba(168,110,240,.2)] hover:bg-[rgb(229,220,240)] cursor-pointer' />
+        <MemoizedLayoutCardExperience items={PropsDataExpSchool} subtitle='Alumni' title='Academic' key={"1"} className='dark:hover:bg-[rgba(168,110,240,.2)] hover:bg-[rgb(229,220,240)] cursor-pointer' />
 
       </section>
     </div>

@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import {
   Tabs,
   TabsContent,
@@ -15,7 +15,6 @@ import LayoutCardProject from '@/components/layout/LayoutCardProject';
 import { TitleCard } from '@/components/elemen/card/TitleCard';
 import TitleLiner from '@/components/elemen/text/TitleLiner';
 import CardProject from '@/components/elemen/card/CardProject';
-
 type Card = {
   value: string,
   children: React.ReactNode
@@ -27,12 +26,15 @@ const CardSection: React.FC<Card> = ({ value, children }) => {
 }
 
 const ProjectCardSection = ({ items }: { items: Project[] }) => {
-  const [activeTab, setActiveTab] = React.useState("apps");
+  const [activeTab, setActiveTab] = React.useState("apps" || "uiux" || "img" || "video");
 
-  const [item, setItem] = React.useState<Project[] | []>(items || []);
   const handleTabChange = (value: React.SetStateAction<string>) => {
     setActiveTab(value);
   };
+  const [item, setItem] = useState<Project[]>(items || []);
+
+
+
   return (
     <div>
       <section className='flex flex-col items-center gap-5 '>
@@ -59,45 +61,14 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
         <section>
           {item && item.length > 0 ? item.map((item, index) => (
             <div key={index}>
-              <TabsContent value="apps">
+              <TabsContent value={activeTab}>
                 <LayoutCardProject >
-                  {item.name === "apps" ? item.items.map((item: ProjectItem, index: number) => (
+                  {item.name === activeTab ? item.items.map((item: ProjectItem, index: number) => (
                     <CardProject key={index} link={item.link} title={item.title} desc={item.desc} icon={item.icon} img={item.img} />
                   )) : (<div>Kosong</div>)}
                 </LayoutCardProject>
               </TabsContent>
-              <TabsContent value="uiapp">
-                <LayoutCardProject >
-                  {item.name === "uiapp" ? item.items.map((item: ProjectItem, index: number) => (
-                    <CardProject key={index} title={item.title} desc={item.desc} icon={item.icon} img={item.img} link={item.link} />
-                  )) : (<div>Kosong</div>)}
-                </LayoutCardProject>
 
-              </TabsContent>
-              <TabsContent value="img">
-                <LayoutCardProject >
-                  {item.name === "img" ? item.items.map((item: ProjectItem, index: number) => (
-                    <CardProject key={index} title={item.title} desc={item.desc} icon={item.icon} img={item.img} link={item.link} />
-                  )) : (<div>Kosong</div>)}
-                </LayoutCardProject>
-
-              </TabsContent>
-              <TabsContent value="video">
-                <LayoutCardProject >
-                  {item.name === "video" ? item.items.map((item: ProjectItem, index: number) => (
-                    <CardProject key={index} title={item.title} desc={item.desc} icon={item.icon} img={item.img} link={item.link}/>
-                  )) : (<div>Kosong</div>)}
-                </LayoutCardProject>
-
-              </TabsContent>
-              <TabsContent value="other">
-                <LayoutCardProject  >
-                  {item.name === "other" ? item.items.map((item: ProjectItem, index: number) => (
-                    <CardProject key={index} title={item.title} desc={item.desc} icon={item.icon} img={item.img} link={item.link}/>
-                  )) : (<div>Kosong</div>)}
-                </LayoutCardProject>
-
-              </TabsContent>
             </div>
           )) : <div>Kosong</div>}
 

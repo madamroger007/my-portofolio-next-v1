@@ -10,6 +10,7 @@ export const metadata:Metadata ={
 }
 function page() {
   return (
+    <>
     <LayoutComponent>
       <section className="w-full pt-14 pb-52 flex flex-col gap-52">
         <Introduction />
@@ -17,6 +18,7 @@ function page() {
         <Certification/>
       </section>
     </LayoutComponent>
+    </>
   )
 }
 

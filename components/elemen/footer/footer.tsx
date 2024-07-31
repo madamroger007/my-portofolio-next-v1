@@ -10,16 +10,6 @@ const Footer = () => {
         <footer className="footer p-10 shadow-top">
             <nav className='dark:text-gray-300 text-gray-700'>
                 <h6 className="font-poppins font-semibold text-xl mb-3">Get in Touch</h6>
-                <a className="link link-hover flex flex-row gap-5">
-                    <div className='rounded-full border w-8 h-8 dark:border-white border-slate-600 flex justify-center items-center'>
-
-                        <FaPhone className='rotate-90' />
-                    </div>
-                    <div className='text-start'>
-                        <h1>Phone</h1>
-                        <p>+62 8211-8783-378</p>
-                    </div>
-                </a>
 
 
                 <a className="link link-hover flex flex-row gap-5">

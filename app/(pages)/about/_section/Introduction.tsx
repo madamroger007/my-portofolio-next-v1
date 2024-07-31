@@ -23,7 +23,7 @@ const Introduction = () => {
                         className="text-gray-700 text-base  font-medium font-notoSerif md:text-lg dark:text-gray-100"
                     />
                 </div>
-                <ButtonPrimary className='px-10 '>View CV</ButtonPrimary>
+                <ButtonPrimary className='px-10' href='https://docs.google.com/document/d/1U2MQ-79iK4uJyl8MLUBnu6iQUu6H7AgOEysbefqlidI/edit?usp=sharing'>View CV</ButtonPrimary>
             </div>
             <MeImage className='gradient-light-to-purple ' />
         </section>

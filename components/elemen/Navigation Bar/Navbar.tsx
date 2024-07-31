@@ -24,15 +24,7 @@ const Navlink = ({ children, href }: { children: React.ReactNode, href: string }
 const Navbar = () => {
   const { isTabletOrMobile } = useMediaQueries();
 
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null; // or a loading spinner
-  }
 
   return (
     <div className="fixed z-50 navbar backdrop-blur-3xl " suppressHydrationWarning={true}>
@@ -77,11 +69,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className={clsx(isTabletOrMobile ? "hidden" : "navbar-end justify-center")}>
-        <a className="btn bg-[#286F6C] px-5 py-2" ><p className='text-white'>Download CV</p></a>
       </div>
     </div>
 
   )
 }
 
-export default React.memo(Navbar)
+export default Navbar

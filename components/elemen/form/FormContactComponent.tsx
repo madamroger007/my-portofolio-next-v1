@@ -29,7 +29,7 @@ const formSchema = z.object({
 type Props = {
     className: string
 }
-export function FormContactComponent({ className }: Props) {
+function FormContactComponent({ className }: Props) {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -42,9 +42,9 @@ export function FormContactComponent({ className }: Props) {
 
     // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        const { name, email, deskripsi } = values;
+        const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0ADeskripsi: ${deskripsi}`;
+        window.location.href = 'mailto:adamsetiadijr07@gmail.com?subject=Contact Form Submission&body=' + emailBody;
     }
     return (
         <Form {...form}>
@@ -86,7 +86,7 @@ export function FormContactComponent({ className }: Props) {
                     name="deskripsi"
                     render={({ field }) => (
                         <FormItem>
-                            
+
                             <FormControl>
                                 <Textarea
                                     placeholder="Your input and suggestions"
@@ -102,7 +102,7 @@ export function FormContactComponent({ className }: Props) {
                         </FormItem>
                     )}
                 />
-                <div className="flex justify-between items-center mt-10">
+                <div className="flex flex-wrap md:gap-0 gap-20 justify-center md:justify-between items-center mt-10">
                     <Button type="submit">Get in Touch</Button>
                     <CardSocialMedia />
                 </div>
@@ -110,3 +110,4 @@ export function FormContactComponent({ className }: Props) {
         </Form>
     )
 }
+export default FormContactComponent

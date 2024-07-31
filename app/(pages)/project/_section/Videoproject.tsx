@@ -10,7 +10,7 @@ import { FaLink } from 'react-icons/fa'
 
 const Videoproject = ({ items }: { items: Project[] }) => {
   const [item, setItem] = React.useState<Project[] | []>(items || []);
-  console.log(item)
+ 
   return (
     <div className=''>
       <section className='flex flex-col items-center gap-5 '>

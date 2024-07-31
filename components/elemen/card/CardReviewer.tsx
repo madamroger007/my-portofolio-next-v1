@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { icon } from '@/lib/data.d'
 import { Card } from '@/types/types'

@@ -1,6 +1,6 @@
 import LayoutComponent from "@/components/layout/layout";
-import BgHeroSection from "./_section/BgHeroSection";
 import { Metadata } from "next";
+import BgHeroSection from "./_section/BgHeroSection";
 
 export const metadata:Metadata ={
   title:"Home"
