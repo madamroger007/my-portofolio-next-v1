@@ -17,9 +17,9 @@ const Footer = () => {
 
                         <FaEnvelope />
                     </div>
-                    <a href='mailto:adamsetiadijr07@gmail.com' className='text-start '>
+                    <a href='mailto:adamsetiadijr07@gmail.com' className='text-start no-underline'>
                         <h1>Email</h1>
-                        <p>adamsetiadijr07@gmai.com</p>
+                        <p>adamsetiadijr07@gmail.com</p>
                     </a>
                 </a>
                 <a className="link link-hover flex flex-row gap-5">
