@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Madamroger"
   },
   description: "Website portofolio Madamroger",
+  icons: env.URL_PRODUCTION,
   openGraph: {
     title: "Madamroger",
     description: "Website portofolio Madamroger",
