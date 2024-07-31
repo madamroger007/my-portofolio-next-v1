@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './_style/globals.css';
 import './_style/components.css';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { env } from 'process';
 
 export const metadata: Metadata = {
   title: {
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Madamroger",
     description: "Website portofolio Madamroger",
-    url: "https://adamstd.my.id", // Ganti dengan URL situs Anda
+    url: env.URL_PRODUCTION, // Ganti dengan URL situs Anda
     siteName: "Madamroger",
     images: [
       {
-        url: "/src/img/icon/madamroger.svg", // Ganti dengan URL gambar Anda
+        url: env.URL_IMG_OPENGRAPH ? env.URL_IMG_OPENGRAPH : "", // Ganti dengan URL gambar Anda
         width: 1200,
         height: 630
       }
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Madamroger",
     description: "Website portofolio Madamroger",
-    images: "/src/img/icon/madamroger.svg", // Ganti dengan URL gambar Anda
+    images: env.URL_IMG_TWITTER, // Ganti dengan URL gambar Anda
   }
 };
 
