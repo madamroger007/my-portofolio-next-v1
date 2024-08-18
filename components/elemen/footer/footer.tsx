@@ -12,7 +12,7 @@ const Footer = () => {
                 <h6 className="font-poppins font-semibold text-xl mb-3">Get in Touch</h6>
 
 
-                <a className="link link-hover flex flex-row gap-5">
+                <div className="link link-hover flex flex-row gap-5">
                     <div className='rounded-full border w-8 h-8 dark:border-white border-slate-600 flex justify-center items-center'>
 
                         <FaEnvelope />
@@ -21,7 +21,7 @@ const Footer = () => {
                         <h1>Email</h1>
                         <p>adamsetiadijr07@gmail.com</p>
                     </a>
-                </a>
+                </div>
                 <a className="link link-hover flex flex-row gap-5">
                     <div className='rounded-full border w-8 h-8 dark:border-white border-slate-600 flex justify-center items-center'>
 

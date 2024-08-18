@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { IconHero } from '../img/Icon'
 import { clsx } from 'clsx';
 import { useMediaQueries } from '@/hooks/Mediaquery'
-import ButtonPrimary from '../button/ButtonPrimary'
 
 const Navlink = ({ children, href }: { children: React.ReactNode, href: string }) => {
   const pathname = usePathname();
@@ -43,7 +42,7 @@ const Navbar = () => {
 
         </div>
 
-        <div className={clsx(isTabletOrMobile ? "hidden" : ' flex justify-center w-full')}>
+        <div className={clsx("" + isTabletOrMobile ? "hidden" : 'flex justify-center w-full')}>
           <IconHero className='w-20 h-20' />
         </div>
       </div>
