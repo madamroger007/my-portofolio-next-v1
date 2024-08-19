@@ -5,6 +5,25 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { env } from 'process';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`${process.env.URL_PRODUCTION}`),
+  generator: "Next.js",
+  applicationName: 'Website Portofolio',
+  referrer: 'origin-when-cross-origin',
+  keywords: ['Adam', 'Adam setiadi', 'Madam', 'MadamRoger', "Madamroger", "madamroger"],
+  authors: [{ name: 'Adam', url: process.env.URL_PRODUCTION }],
+  creator: 'Adam Setiadi',
+  publisher: 'Adam Setiadi',
+  formatDetection: {
+    email: true,
+    address: true,
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+      'id-ID': '/id-ID'
+    },
+  },
   title: {
     absolute: "",
     default: "Madamroger",
@@ -13,7 +32,7 @@ export const metadata: Metadata = {
   description: "Website portofolio Madamroger",
   openGraph: {
     title: "Madamroger",
-    description: "Website portofolio Madamroger",
+    description: "Hai! Nama saya Adam Setiadi, saat ini saya tinggal di Bandung, Jawa Barat, Indonesia. Saya sedang menempuh pendidikan di Universitas Bale Bandung",
     url: env.URL_PRODUCTION, // Ganti dengan URL situs Anda
     siteName: "Madamroger",
     locale: "en_US",
@@ -22,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Madamroger",
-    description: "Website portofolio Madamroger"
+    description: "WHai! Nama saya Adam Setiadi, saat ini saya tinggal di Bandung, Jawa Barat, Indonesia. Saya sedang menempuh pendidikan di Universitas Bale Bandung"
   }
 };
 
