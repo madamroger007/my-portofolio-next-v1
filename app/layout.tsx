@@ -4,7 +4,7 @@ import './_style/components.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { env } from 'process';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.URL_PRODUCTION}`),
   generator: "Next.js",
@@ -62,6 +62,7 @@ export default function RootLayout({
         >
           {children}
           <SpeedInsights/>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
