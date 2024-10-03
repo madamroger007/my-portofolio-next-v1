@@ -14,25 +14,25 @@ export const icon = {
 
 export const PropsDataExpwork = [
   {
-    title: "Bandung Computer Education ",
+    name: "Bandung Computer Education ",
     desc: "Saya pernah bekerja diperusahaan edukasi daerah katapang bandung, disana saya bekerja sebagai pengajar dan juga memiliki beberapa pengalaman seperti mengajar anak-anak tentang komputer, serta membuat pemberkasan yang berhubungan dengan pembelajaran",
     minute: "5 minute",
     date: "Maret/2022 · Agustus/2022",
   },
   {
-    title: "PT Wahanan Express",
+    name: "PT Wahanan Express",
     desc: "Saya pernah bekerja diperusahaan bidang jasa pengiriman barang daerah arjasari bandung, disana saya bekerja dibagian administrasi dan juga memiliki beberapa pengalaman dibidang administrasi seperti membuat pemberkasan keuangan, pemasukan dan juga melayani administrasi barang konsumen",
     minute: "5 minute",
     date: "Januari/2021 · Maret/2021",
   },
   {
-    title: "Abadi Jaya Bersama",
+    name: "Abadi Jaya Bersama",
     desc: "Saya pernah bekerja diperusahaan bidang keuangan daerah kopo bandung, disana saya bekerja dibagian sales dan juga memiliki beberapa pengalaman dibidang marketing seperti menawarkan dan memperomosikan layanan perusahaan",
     minute: "5 minute",
     date: "September/2020 · November/2020",
   },
   {
-    title: "PT Best Profit",
+    name: "PT Best Profit",
     desc: "Saya pernah bekerja di perusahaan bidang trading daerah kota bandung, disana saya bekerja dibagian marketing dan juga memiliki beberapa pengalaman dibindag marketing seperti mempromosikan, menawarkan layanan dan keunggulan perusahaan",
     minute: "5 minute",
     date: "Juni/2020 · Agustus/2020",
@@ -41,26 +41,26 @@ export const PropsDataExpwork = [
 
 export const PropsDataExpSchool = [
   {
-    title: "Universitas Bale bandung ",
+    name: "Universitas Bale bandung ",
     desc: "Perkuliahan saya di Universitas Bale bandung yaitu daerah baleendah kec. baleendah kab bandung provinsi jawa barat",
 
     minute: "5 minute",
     date: "September/2021 · Now",
   },
   {
-    title: "SMA Handayani Banjaran 02",
+    name: "SMA Handayani Banjaran 02",
     desc: "Sekolah Menengah Atas saya di SMA Handayani Banjaran 02 yaitu daerah desa nambo kec. banjaran kab bandung provinsi jawa barat",
     minute: "5 minute",
     date: "Juli/2017 · Juni/2020",
   },
   {
-    title: "SMP Pemuda Banjaran",
+    name: "SMP Pemuda Banjaran",
     desc: "Sekolah Menengah Pertama saya di SMP Pemuda Banjaran yaitu daerah desa kamasan kec. banjaran kab bandung provinsi jawa barat",
     minute: "5 minute",
     date: "Juli/2014 · Juni/2017",
   },
   {
-    title: "SD Kamasan 02",
+    name: "SD Kamasan 02",
     desc: "Sekolah Dasar saya di SD Kamasan 02 yaitu daerah desa neglasari kec. banjaran kab bandung provinsi jawa barat",
     minute: "5 minute",
     date: "Juli/2009 · Juni/2014",
@@ -77,12 +77,12 @@ export type Items = {
   tech: Tech[];
 };
 export type Skill = {
-  title: string;
+  name: string;
   items: Items[];
 };
 export const skill: Skill[] = [
   {
-    title: "Web Developement",
+    name: "Web Developement",
     items: [
       {
         name: "Front End",
@@ -248,7 +248,7 @@ export type IconProject = {
   icon: string;
 };
 export type ProjectItem = {
-  title: string;
+  name: string;
   desc: string;
   img: string;
   link: string;
@@ -265,7 +265,7 @@ export const projectItem: Project[] = [
     createdAt: "",
     items: [
       {
-        title: "IFSTORE",
+        name: "IFSTORE",
         desc: "Website Layanan Jasa pembuatan website digital, desain video, desain gambar",
         img: "/src/img/projek/ifstore.png",
         link: "https://ifstore.vercel.app",
@@ -283,7 +283,7 @@ export const projectItem: Project[] = [
         ],
       },
       {
-        title: "Charity Comunity",
+        name: "Charity Comunity",
         desc: "Website Layanan Donasi bagi yang membutuhkan",
         img: "/src/img/projek/charity.png",
         link: "https://caritycommunity.glitch.me",
@@ -309,7 +309,7 @@ export const projectItem: Project[] = [
         ],
       },
       {
-        title: "Movie List",
+        name: "Movie List",
         desc: "Website untuk mengelola movie",
         img: "/src/img/projek/movie-flask.png",
         link: "https://movie-nge-list.glitch.me",
@@ -336,7 +336,7 @@ export const projectItem: Project[] = [
         ],
       },
       {
-        title: "Matrix Java",
+        name: "Matrix Java",
         desc: "Aplikasi penghitung matriks obe",
         img: "/src/img/projek/java-matrix.jpg",
         link: "https://github.com/madamroger007/Aljabar_matrix-v-2.0.git",

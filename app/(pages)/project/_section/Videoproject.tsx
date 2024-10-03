@@ -27,7 +27,7 @@ const Videoproject = ({ items }: { items: Project[] }) => {
 
             {i.items.map((it, index) => (
 
-              <CardTutor key={index} title={it.title} icon={it.icon} desc={it.desc} img={it.img} link={it.link} />
+              <CardTutor key={index} name={it.name} icon={it.icon} desc={it.desc} img={it.img} link={it.link} />
             ))}
           </LayoutCardProject>
         ))}

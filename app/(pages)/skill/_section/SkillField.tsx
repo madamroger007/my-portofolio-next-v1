@@ -59,10 +59,10 @@ const SkillField = ({ items }: { items: Skill[] }) => {
                 </section>
                 <section className='relative '>
                     {item && item.length > 0 ? item.map(skill => (
-                        <div key={skill.title}>
-                            <TabsContent value="webdev"><CardSkil items={skill.title === "Web Developement" ? skill.items : []} /></TabsContent>
-                            <TabsContent value="android"><CardSkil items={skill.title === "Android Developement" ? skill.items : []} /></TabsContent>
-                            <TabsContent value="desain"><CardSkil items={skill.title === "Desain" ? skill.items : []} /></TabsContent>
+                        <div key={skill.name}>
+                            <TabsContent value="webdev"><CardSkil items={skill.name === "Web Developement" ? skill.items : []} /></TabsContent>
+                            <TabsContent value="android"><CardSkil items={skill.name === "Android Developement" ? skill.items : []} /></TabsContent>
+                            <TabsContent value="desain"><CardSkil items={skill.name === "Desain" ? skill.items : []} /></TabsContent>
                         </div>
                     )) : <div>kosong</div>}
                 </section>

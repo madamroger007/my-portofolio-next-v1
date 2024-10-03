@@ -15,11 +15,11 @@ const Certification = () => {
             <TitleLiner title='Certifications' />
           </section>
           <section className='grid md:grid-cols-2 grid-cols-1 px-5 md:px-10 py-10 gap-10'>
-            <CardSertification title='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' minute='3 minute' url='/certification/dicoding' />
-            <CardSertification title='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' minute='3 minute' url='/certification/dicoding' />
-            <CardSertification title='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' minute='3 minute' url='/certification/dicoding' />
-            <CardSertification title='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' minute='3 minute' url='/certification/dicoding' />
-            <CardSertification title='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' minute='3 minute' url='/certification/dicoding' />
+            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
+            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
+            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
+            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
+            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
           
           </section>
         </div>

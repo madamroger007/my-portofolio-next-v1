@@ -3,6 +3,7 @@ import './_style/globals.css';
 import './_style/components.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { env } from 'process';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.URL_PRODUCTION}`),
@@ -60,6 +61,7 @@ export default function RootLayout({
 
         >
           {children}
+          <SpeedInsights/>
         </ThemeProvider>
       </body>
     </html>

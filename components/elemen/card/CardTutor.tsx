@@ -3,17 +3,17 @@ import { IconProject, ProjectItem } from '@/lib/data.d'
 import Link from 'next/link'
 import React from 'react'
 
-export const CardTutor: React.FC<ProjectItem> = ({ title, desc, icon, img, link }) => {
+export const CardTutor: React.FC<ProjectItem> = ({ name, desc, icon, img, link }) => {
   return (
     <Link href={link} className="card  dark:bg-gray-800  w-96 shadow-xl shadow-slate-4000 dark:shadow-none">
       <figure className='pt-8 px-5 '>
         <img
           src={img}
-          alt={title} className='rounded-lg' />
+          alt={name} className='rounded-lg' />
       </figure>
       <div className="card-body grid grid-cols-2 ">
         <div>
-          <h2 className="card-title">{title}</h2>
+          <h2 className="card-title">{name}</h2>
           <p className='truncate ... hover:overflow-visible hover:text-wrap'>{desc}</p>
         </div>
         <div className="card-actions justify-end flex pt-5">

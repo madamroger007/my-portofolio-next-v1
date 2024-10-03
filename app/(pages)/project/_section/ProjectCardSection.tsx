@@ -64,7 +64,7 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
               <TabsContent value={activeTab}>
                 <LayoutCardProject >
                   {item.name === activeTab ? item.items.map((item: ProjectItem, index: number) => (
-                    <CardProject key={index} link={item.link} title={item.title} desc={item.desc} icon={item.icon} img={item.img} />
+                    <CardProject key={index} link={item.link} name={item.name} desc={item.desc} icon={item.icon} img={item.img} />
                   )) : (<div>Kosong</div>)}
                 </LayoutCardProject>
               </TabsContent>
