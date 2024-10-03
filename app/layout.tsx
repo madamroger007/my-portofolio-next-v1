@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Madamroger",
     description: "WHai! Nama saya Adam Setiadi, saat ini saya tinggal di Bandung, Jawa Barat, Indonesia. Saya sedang menempuh pendidikan di Universitas Bale Bandung"
+  },
+  verification:{
+    google:"pg2-6f1k4QpvbM4zw8oQgkvvIzOvBHQJJes4IzWjbFI"
+    
   }
 };
 
