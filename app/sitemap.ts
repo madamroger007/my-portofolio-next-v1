@@ -3,10 +3,16 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${process.env.URL_PRODUCTION}/about`,
+      url: `${process.env.URL_PRODUCTION}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
+    },
+    {
+      url: `${process.env.URL_PRODUCTION}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.9,
     },
     {
       url: `${process.env.URL_PRODUCTION}/skill`,
