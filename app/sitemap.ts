@@ -6,28 +6,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}`,
-      lastModified: new Date().toISOString(), // Ensures proper date format
-   
+      // lastModified: lastModified, // Uncomment if you implement content change logic
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date().toISOString(),
-     
+      // lastModified: lastModified, // Uncomment if you implement content change logic
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/skill`,
-      lastModified: new Date().toISOString(),
-   
+      // lastModified: lastModified, // Uncomment if you implement content change logic
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/project`,
-      lastModified: new Date().toISOString(),
-
+      // lastModified: lastModified, // Uncomment if you implement content change logic
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date().toISOString(),
-     
+      // lastModified: lastModified, // Uncomment if you implement content change logic
+      priority: 1.0,
     },
   ];
+
 }
