@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
+import { formatDate } from '@/utils/DateTime';
 interface CardSertificationProps {
   name: string;
   name_company: string;
@@ -11,7 +12,7 @@ interface CardSertificationProps {
   updated_at: string
   className?: string;
 }
-const CardSertification: React.FC<CardSertificationProps> = ({ name, name_company, url, created_at, date, className }) => {
+const CardSertification: React.FC<CardSertificationProps> = ({ name, name_company, url, updated_at, date, className }) => {
   return (
     <Link href={url}>
       <div className={'relative border dark:border-blue-600 border-slate-400  p-5 rounded-2xl grid gap-4  ' + className}>
@@ -24,8 +25,8 @@ const CardSertification: React.FC<CardSertificationProps> = ({ name, name_compan
 
         <FaExternalLinkAlt className='absolute top-3 right-3' />
         <div className='flex justify-between'>
-          <span className=' text-blue-600'>{created_at}</span>
-          <span className=' text-blue-400'>{date}</span>
+          <span className=' text-blue-600'>{formatDate(updated_at)}</span>
+          <span className=' text-blue-400'>{formatDate(date)}</span>
         </div>
       </div>
     </Link>

@@ -1,29 +1,39 @@
+"use client"
 import CardSertification from '@/components/elemen/card/CardSertification'
 import { TitleCard } from '@/components/elemen/card/TitleCard'
 import TitleLiner from '@/components/elemen/text/TitleLiner'
 import React from 'react'
 import { TiFlowChildren } from 'react-icons/ti'
-
+import { getCertification } from '@/utils/getApiRequest'
+import { Certification as CertificationType } from '@/types/types'
 const Certification = () => {
-    return (
-        <div>
-          <section className='flex flex-col items-center gap-5 '>
-            <TitleCard >
-              <TiFlowChildren />
-              <h1>Flow</h1>
-            </TitleCard>
-            <TitleLiner title='Certifications' />
-          </section>
-          <section className='grid md:grid-cols-2 grid-cols-1 px-5 md:px-10 py-10 gap-10'>
-            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
-            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
-            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
-            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
-            <CardSertification name='Learn Fundamental DevOps (DevOps and Back-End Developer Scholarship Program)' date='januari 3/0/2002' name_company='Dicoding Indonesia' created_at='3 minute' updated_at='5 minute' url='/certification/dicoding' />
-          
-          </section>
-        </div>
-      )
+  const [dataCertification, setDataCertification] = React.useState<CertificationType[]>([])
+
+  React.useEffect(() => {
+
+    const fetchData = async () => {
+      const data = await getCertification();
+      setDataCertification(data);
+    }
+    fetchData();
+  }, [])
+  return (
+    <div>
+      <section className='flex flex-col items-center gap-5 '>
+        <TitleCard >
+          <TiFlowChildren />
+          <h1>Flow</h1>
+        </TitleCard>
+        <TitleLiner title='Certifications' />
+      </section>
+      <section className='grid md:grid-cols-2 grid-cols-1 px-5 md:px-10 py-10 gap-10'>
+        {dataCertification.map((item) => (
+          <CardSertification key={item.id} name={item.title} date={item.time_cert} name_company={item.name_institution} created_at={item.createdAt} updated_at={item.updatedAt} url={item.link_cert} />
+        ))}
+
+      </section>
+    </div>
+  )
 }
 
 export default Certification

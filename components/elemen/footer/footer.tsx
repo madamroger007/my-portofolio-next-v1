@@ -1,10 +1,8 @@
 "use client"
-import { useTheme } from 'next-themes';
 import React from 'react'
-import { FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 const Footer = () => {
-    const { theme } = useTheme();
     return (
 
         <footer className="footer p-10 shadow-top">

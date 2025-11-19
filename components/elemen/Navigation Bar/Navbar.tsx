@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { IconHero } from '../img/Icon'
 import { clsx } from 'clsx';
 import { useMediaQueries } from '@/hooks/Mediaquery'
@@ -22,7 +22,11 @@ const Navlink = ({ children, href }: { children: React.ReactNode, href: string }
 
 const Navbar = () => {
   const { isTabletOrMobile } = useMediaQueries();
-
+  // mounted guard to avoid server/client mismatch when using window-based hooks
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
 
   return (
@@ -43,12 +47,12 @@ const Navbar = () => {
         </div>
 
         <div className={clsx("" + isTabletOrMobile ? "hidden" : 'flex justify-center w-full')}>
-          <IconHero className='w-20 h-20' />
+          {mounted ? <IconHero className="w-20 h-20" /> : <div className="w-20 h-20" aria-hidden />}
         </div>
       </div>
-      {isTabletOrMobile && (
-        <div className={clsx(isTabletOrMobile && "navbar-end")} >
-          <IconHero className='w-20 h-20' />
+      {mounted && isTabletOrMobile && (
+        <div className="navbar-end">
+          <IconHero className="w-20 h-20" />
         </div>
       )}
 
@@ -61,13 +65,12 @@ const Navbar = () => {
           <Navlink href='/project'>Project</Navlink>
           <Navlink href='/contact'>Contact</Navlink>
 
-
-
         </ul>
       </div>
-      <div className={clsx(isTabletOrMobile ? "hidden" : "navbar-end justify-center")}>
+
+      <div className={clsx(mounted && !isTabletOrMobile ? "navbar-end justify-center" : "hidden")}>
       </div>
-    </div>
+    </div >
 
   )
 }
