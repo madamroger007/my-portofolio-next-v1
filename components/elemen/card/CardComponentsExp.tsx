@@ -10,11 +10,14 @@ export interface CardComponentsExpProps {
 }
 const CardComponentsExp: React.FC<CardComponentsExpProps> = ({ name, institution, description, start, end, className }) => {
   return (
-    <div className={'border dark:border-blue-600 border-slate-400  p-5 rounded-2xl grid gap-4  ' + className}>
+    <div className={'border dark:border-blue-600 border-slate-400  p-5 rounded-2xl grid gap-4 ' + className}>
       <h1 className='dark:text-gray-300 text-gray-700 font-raleway font-bold'>{institution}</h1>
       <h1 className='dark:text-gray-300 text-gray-700 font-raleway font-semibold'>{name}</h1>
 
-      <p className='dark:text-gray-300 text-gray-700'>{description}</p>
+      <p className="dark:text-gray-300 text-gray-700 whitespace-normal break-words break-all">
+        {description}
+      </p>
+
       <div className='flex justify-between'>
         <span className=' text-blue-600'>{formatDate(start)}</span>
         <span className=' text-blue-400'>{formatDate(end)}</span>

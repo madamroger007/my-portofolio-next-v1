@@ -1,14 +1,14 @@
 import LayoutComponent from '@/components/layout/layout'
 import React from 'react'
 import SkillField from './_section/SkillField'
-import { skill } from '@/lib/data.d'
+import { getSkills } from '@/utils/getApiRequest'
 
 async function page() {
-  const data =await skill
+  const data = await getSkills();
   return (
     <LayoutComponent>
       <section className='w-full pt-14 pb-52'>
-        <SkillField items={data}/>
+        <SkillField items={data} />
       </section>
     </LayoutComponent>
   )

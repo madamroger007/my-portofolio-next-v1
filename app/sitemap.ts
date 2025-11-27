@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
  
-const baseUrl = process.env.URL_PRODUCTION || 'https://www.adamstd.my.id'; // Default fallback URL
+const baseUrl = process.env.NEXT_PUBLIC_URL_PRODUCTION || 'https://www.adamstd.my.id'; // Default fallback URL
 const lastModified = new Date().toISOString(); // Use a static date to avoid redundant calls
 
 export default function sitemap(): MetadataRoute.Sitemap {

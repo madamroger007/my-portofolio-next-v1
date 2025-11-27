@@ -1,3 +1,5 @@
+import { Icons } from "@/types/types";
+
 export const icon = {
   "c-sharp": "/src/img/icon programming/c-sharp.png",
   idea: "/src/img/icon programming/idea.png",
@@ -74,7 +76,7 @@ export type Tech = {
 };
 export type Items = {
   name: string;
-  tech: Tech[];
+  icons: Icons[];
 };
 export type Skill = {
   name: string;

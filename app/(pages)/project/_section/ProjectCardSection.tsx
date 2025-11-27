@@ -1,5 +1,5 @@
 "use client"
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import {
   Tabs,
   TabsContent,
@@ -10,7 +10,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { FaLaptopCode, FaLink, FaRegImages, FaVideo } from "react-icons/fa";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
-import { Items, Project, ProjectItem } from '@/lib/data.d'
+import { Project } from '@/types/types';
 import LayoutCardProject from '@/components/layout/LayoutCardProject';
 import { TitleCard } from '@/components/elemen/card/TitleCard';
 import TitleLiner from '@/components/elemen/text/TitleLiner';
@@ -26,14 +26,12 @@ const CardSection: React.FC<Card> = ({ value, children }) => {
 }
 
 const ProjectCardSection = ({ items }: { items: Project[] }) => {
-  const [activeTab, setActiveTab] = React.useState("apps" || "uiux" || "img" || "video");
+  const [activeTab, setActiveTab] = React.useState<string>("Application");
 
   const handleTabChange = (value: React.SetStateAction<string>) => {
     setActiveTab(value);
   };
   const [item, setItem] = useState<Project[]>(items || []);
-
-
 
   return (
     <div>
@@ -49,31 +47,45 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
           <ScrollArea className='md:w-full w-fit whitespace-nowrap px-2 py-4'>
             <div className='w-full flex justify-center items-center gap-10'>
 
-              <CardSection value="apps" ><FaLaptopCode className='w-5 h-5' /> Application</CardSection>
-              <CardSection value="uiapp"><MdOutlineSpaceDashboard className='w-5 h-5' /> UI / UX Application</CardSection>
-              <CardSection value="img"><FaRegImages className='w-5 h-5' /> Image Design</CardSection>
-              <CardSection value="video"><FaVideo className='w-5 h-5' /> Video Design</CardSection>
-              <CardSection value="other"><RxDashboard className='w-5 h-5' /> Other</CardSection>
+              <CardSection value="Application" ><FaLaptopCode className='w-5 h-5' /> Application</CardSection>
+              <CardSection value="UI/UX Application"><MdOutlineSpaceDashboard className='w-5 h-5' /> UI / UX Application</CardSection>
+              <CardSection value="Design Image"><FaRegImages className='w-5 h-5' /> Image Design</CardSection>
+              <CardSection value="Design video"><FaVideo className='w-5 h-5' /> Video Design</CardSection>
+              <CardSection value="Other"><RxDashboard className='w-5 h-5' /> Other</CardSection>
             </div>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </TabsList>
         <section>
-          {item && item.length > 0 ? item.map((item, index) => (
-            <div key={index}>
-              <TabsContent value={activeTab}>
-                <LayoutCardProject >
-                  {item.name === activeTab ? item.items.map((item: ProjectItem, index: number) => (
-                    <CardProject key={index} link={item.link} name={item.name} desc={item.desc} icon={item.icon} img={item.img} />
-                  )) : (<div>Kosong</div>)}
-                </LayoutCardProject>
-              </TabsContent>
+          <TabsContent value={activeTab}>
+            <LayoutCardProject>
+              {item
+                .filter((p) => p.category?.title === activeTab)
+                .map((project, index) => (
+                  <CardProject
+                    key={index}
+                    url={project.url}
+                    title={project.title}
+                    description={project.description}
+                    icons={project.icons}
+                    imgUrl={project.imgUrl}
+                    id={project.id}
+                    publicId={project.publicId}
+                    createdAt={project.createdAt}
+                    updatedAt={project.updatedAt}
+                    category={project.category}
+                  />
+                ))
+              }
 
-            </div>
-          )) : <div>Kosong</div>}
-
-
+              {/* Jika tidak ada data */}
+              {item.filter((p) => p.category?.title === activeTab).length === 0 && (
+                <div className="text-center py-10">Kosong</div>
+              )}
+            </LayoutCardProject>
+          </TabsContent>
         </section>
+
       </Tabs>
     </div>
   )

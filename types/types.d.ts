@@ -29,3 +29,38 @@ type Certification = {
   createdAt: string;
   updatedAt: string;
 }
+
+export type Skills = {
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  category: {
+    id: string;
+    title: string;
+  };
+  icons: Icons[]
+};
+
+export type Icons = {
+  id: string;
+  name: string;
+  url: string;
+}
+
+export type Project = {
+  id: string?;
+  title: string;
+  url: string
+  imgUrl: string;
+  publicId: string?;
+  description: string;
+  createdAt: string?;
+  updatedAt: string?;
+  category: {
+    id: string;
+    title: string;
+    subtitle: string;
+  } | null;
+  icons: Icons[]
+}

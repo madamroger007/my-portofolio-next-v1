@@ -16,7 +16,7 @@ const CardSertification: React.FC<CardSertificationProps> = ({ name, name_compan
   return (
     <Link href={url}>
       <div className={'relative border dark:border-blue-600 border-slate-400  p-5 rounded-2xl grid gap-4  ' + className}>
-        <h1 className='dark:text-gray-300 text-gray-700 font-raleway font-bold '>{name}</h1>
+        <h1 className='dark:text-gray-300 text-gray-700 font-raleway whitespace-normal  font-bold break-words break-all'>{name}</h1>
         <div className='flex items-center gap-2'>
           <HiOutlineBuildingOffice2 />
           <p className='dark:text-gray-300 text-gray-700 font-semibold'>{name_company}</p>

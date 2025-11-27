@@ -10,7 +10,7 @@ const LayoutCardExperience = ({ name, subtitle, className, items }: { items: Car
       </div>
       <div className='grid gap-8 mt-10'>
         {items.map(item => (
-          <CardComponentsExp className={className} key={item.name}  start={item.start} end={item.end} name={item.name} institution={item.institution} description={item.description} />
+          <CardComponentsExp className={className} key={item.name} start={item.start} end={item.end} name={item.name} institution={item.institution} description={item.description} />
         ))}
       </div>
     </div>

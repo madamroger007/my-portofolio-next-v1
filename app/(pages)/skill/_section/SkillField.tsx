@@ -7,15 +7,18 @@ import { TitleCard } from '@/components/elemen/card/TitleCard'
 import { FaLink } from "react-icons/fa6";
 import clsx from 'clsx'
 import Link from 'next/link'
-import { Skill } from '@/lib/data.d'
+// import { Skill } from '@/lib/data.d'
+import { Skills } from "@/types/types";
+
 import CardSkil from './CardSkil'
 
-const SkillField = ({ items }: { items: Skill[] }) => {
+const SkillField = ({ items }: { items: Skills[] }) => {
     const [activeTab, setActiveTab] = React.useState("webdev");
-    const [item, setItem] = React.useState<Skill[] | []>(items || []);
+    const [item, setItem] = React.useState<Skills[] | []>(items || []);
     const handleTabChange = (value: React.SetStateAction<string>) => {
         setActiveTab(value);
     };
+
     return (
         <div>
             <section className='flex flex-col items-center gap-5 '>
@@ -57,15 +60,20 @@ const SkillField = ({ items }: { items: Skill[] }) => {
                     <Link href={"#slide2"} className={clsx('w-10 h-2 rounded', activeTab === 'android' ? 'bg-blue-700' : 'bg-slate-500')}></Link>
                     <Link href={"#slide3"} className={clsx('w-10 h-2 rounded', activeTab === 'desain' ? 'bg-blue-700' : 'bg-slate-500')}></Link>
                 </section>
-                <section className='relative '>
-                    {item && item.length > 0 ? item.map(skill => (
-                        <div key={skill.name}>
-                            <TabsContent value="webdev"><CardSkil items={skill.name === "Web Developement" ? skill.items : []} /></TabsContent>
-                            <TabsContent value="android"><CardSkil items={skill.name === "Android Developement" ? skill.items : []} /></TabsContent>
-                            <TabsContent value="desain"><CardSkil items={skill.name === "Desain" ? skill.items : []} /></TabsContent>
-                        </div>
-                    )) : <div>kosong</div>}
+                <section className="relative">
+                    <TabsContent value="webdev">
+                        <CardSkil items={item.filter(i => i.category.title === "Web Development")} />
+                    </TabsContent>
+
+                    <TabsContent value="android">
+                        <CardSkil items={item.filter(i => i.category.title === "Android Development")} />
+                    </TabsContent>
+
+                    <TabsContent value="desain">
+                        <CardSkil items={item.filter(i => i.category.title === "Desain Grafis")} />
+                    </TabsContent>
                 </section>
+
 
             </Tabs>
 

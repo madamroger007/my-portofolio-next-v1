@@ -31,13 +31,14 @@ const Experience = () => {
     end: item.time_end,
   });
 
-  const workData = dataExperience
+  const workData = (dataExperience ?? [])
     .filter(item => item.category_name === "Work")
     .map(mapToCardProps);
 
-  const schoolData = dataExperience
-    .filter(item => item.category_name === "Alumni")
+  const schoolData = (dataExperience ?? [])
+    .filter(item => item.category_name === "Academic")
     .map(mapToCardProps);
+
 
   return (
     <div>

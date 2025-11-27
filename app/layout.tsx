@@ -6,12 +6,12 @@ import { env } from 'process';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
-  metadataBase: new URL(`${process.env.URL_PRODUCTION}`),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL_PRODUCTION}`),
   generator: "Next.js",
   applicationName: 'Website Portofolio',
   referrer: 'origin-when-cross-origin',
   keywords: ['Adam', 'Adam setiadi', 'Madam', 'MadamRoger', "Madamroger", "madamroger"],
-  authors: [{ name: 'Adam', url: process.env.URL_PRODUCTION }],
+  authors: [{ name: 'Adam', url: process.env.NEXT_PUBLIC_URL_PRODUCTION }],
   creator: 'Adam Setiadi',
   publisher: 'Adam Setiadi',
   formatDetection: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Madamroger",
     description: "Hai! Nama saya Adam Setiadi, saat ini saya tinggal di Bandung, Jawa Barat, Indonesia. Saya sedang menempuh pendidikan di Universitas Bale Bandung",
-    url: env.URL_PRODUCTION, // Ganti dengan URL situs Anda
+    url: env.NEXT_PUBLIC_URL_PRODUCTION, // Ganti dengan URL situs Anda
     siteName: "Madamroger",
     locale: "en_US",
     type: "website",
