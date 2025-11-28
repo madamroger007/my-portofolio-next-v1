@@ -1,7 +1,7 @@
 import { Experience, Certification, Skills, Project } from "@/types/types";
 export async function getExperience(): Promise<Experience[]> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/experience`, {
+        const response = await fetch(`${process.env.API_URL}/experience`, {
             method: "GET",
             next: {
                 revalidate: 3600,
@@ -9,8 +9,8 @@ export async function getExperience(): Promise<Experience[]> {
             },
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TOKEN_ACCESS_API}`,
-                "x-app-token": process.env.NEXT_PUBLIC_TOKEN_APP!
+                "Authorization": `Bearer ${process.env.TOKEN_ACCESS_API}`,
+                "x-app-token": process.env.TOKEN_APP!
             }
         });
         const data = await response.json();
@@ -24,7 +24,7 @@ export async function getExperience(): Promise<Experience[]> {
 
 export async function getCertification(): Promise<Certification[]> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/certification`, {
+        const response = await fetch(`${process.env.API_URL}/certification`, {
             method: "GET",
             next: {
                 revalidate: 3600,
@@ -32,8 +32,8 @@ export async function getCertification(): Promise<Certification[]> {
             },
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TOKEN_ACCESS_API}`,
-                "x-app-token": process.env.NEXT_PUBLIC_TOKEN_APP!
+                "Authorization": `Bearer ${process.env.TOKEN_ACCESS_API}`,
+                "x-app-token": process.env.TOKEN_APP!
             }
         });
         const data = await response.json();
@@ -46,7 +46,7 @@ export async function getCertification(): Promise<Certification[]> {
 
 export async function getSkills(): Promise<Skills[]> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/skill`, {
+        const response = await fetch(`${process.env.API_URL}/skill`, {
             method: "GET",
             next: {
                 revalidate: 3600,
@@ -54,8 +54,8 @@ export async function getSkills(): Promise<Skills[]> {
             },
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TOKEN_ACCESS_API}`,
-                "x-app-token": process.env.NEXT_PUBLIC_TOKEN_APP!
+                "Authorization": `Bearer ${process.env.TOKEN_ACCESS_API}`,
+                "x-app-token": process.env.TOKEN_APP!
             }
         });
         const data = await response.json();
@@ -70,7 +70,7 @@ export async function getSkills(): Promise<Skills[]> {
 
 export async function getProject(): Promise<Project[]> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project`, {
+        const response = await fetch(`${process.env.API_URL}/project`, {
             method: "GET",
             next: {
                 revalidate: 3600,
@@ -78,8 +78,8 @@ export async function getProject(): Promise<Project[]> {
             },
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TOKEN_ACCESS_API}`,
-                "x-app-token": process.env.NEXT_PUBLIC_TOKEN_APP!
+                "Authorization": `Bearer ${process.env.TOKEN_ACCESS_API}`,
+                "x-app-token": process.env.TOKEN_APP!
             }
         });
         const data = await response.json();
