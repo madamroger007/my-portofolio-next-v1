@@ -4,19 +4,10 @@ import { TitleCard } from '@/components/elemen/card/TitleCard'
 import TitleLiner from '@/components/elemen/text/TitleLiner'
 import React from 'react'
 import { TiFlowChildren } from 'react-icons/ti'
-import { getCertification } from '@/utils/getApiRequest'
 import { Certification as CertificationType } from '@/types/types'
-const Certification = () => {
-  const [dataCertification, setDataCertification] = React.useState<CertificationType[]>([])
+const Certification = ({ items }: { items: CertificationType[] }) => {
+  const [dataCertification, setDataCertification] = React.useState<CertificationType[] | []>(items || []);
 
-  React.useEffect(() => {
-
-    const fetchData = async () => {
-      const data = await getCertification();
-      setDataCertification(data);
-    }
-    fetchData();
-  }, [])
   return (
     <div>
       <section className='flex flex-col items-center gap-5 '>

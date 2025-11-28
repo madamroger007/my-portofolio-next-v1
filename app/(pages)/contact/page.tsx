@@ -1,6 +1,6 @@
 import LayoutComponent from '@/components/layout/layout'
 import dynamic from 'next/dynamic'
-const DynamicFormAction = dynamic(() => import('./_section/FormAction'), { ssr: false })
+const DynamicFormAction = dynamic(() => import('./_section/FormAction'), { loading: () => <p>Loading...</p> })
 export default function page() {
   return (
     <>

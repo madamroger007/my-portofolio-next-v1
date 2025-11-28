@@ -5,7 +5,7 @@ import TitleLiner from '@/components/elemen/text/TitleLiner';
 import React from 'react';
 import { FaLink } from 'react-icons/fa';
 
-const FormContactComponent = dynamic(() => import('@/components/elemen/form/FormContactComponent'));
+const FormContactComponent = dynamic(() => import('@/components/elemen/form/FormContactComponent'), { loading: () => <p>Loading...</p> });
 
 const FormAction = () => {
     return (

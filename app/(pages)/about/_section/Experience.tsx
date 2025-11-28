@@ -4,24 +4,17 @@ import { TiFlowChildren } from "react-icons/ti";
 import React from 'react'
 import TitleLiner from '@/components/elemen/text/TitleLiner';
 import dynamic from 'next/dynamic';
-const LayoutCardExperience = dynamic(() => import('@/components/layout/LayoutCardExperience'), { ssr: false });
+const LayoutCardExperience = dynamic(() => import('@/components/layout/LayoutCardExperience'), { loading: () => <p>Loading...</p> });
 import { CardComponentsExpProps } from '@/components/elemen/card/CardComponentsExp';
-import { getExperience } from '@/utils/getApiRequest';
 import { Experience as ExperienceType } from '@/types/types';
 // Wrap LayoutCardExperience with memo
 const MemoizedLayoutCardExperience = React.memo(LayoutCardExperience, (prevProps, nextProps) => {
   // Perform a shallow comparison of the 'items' prop
   return prevProps.items === nextProps.items;
 });
-const Experience = () => {
-  const [dataExperience, setDataExperience] = React.useState<ExperienceType[]>([]);
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const data = await getExperience()
-      setDataExperience(data)
-    }
-    fetchData()
-  }, []);
+const Experience = ({ items }: { items: ExperienceType[] }) => {
+  const [dataExperience, setDataExperience] = React.useState<ExperienceType[] | []>(items || []);
+
 
   const mapToCardProps = (item: ExperienceType): CardComponentsExpProps => ({
     name: item.title,

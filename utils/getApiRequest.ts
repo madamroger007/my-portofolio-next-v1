@@ -4,7 +4,7 @@ export async function getExperience(): Promise<Experience[]> {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/experience`, {
             method: "GET",
             next: {
-                revalidate: 60,
+                revalidate: 3600,
                 tags: ['experience']
             },
             headers: {
@@ -27,7 +27,7 @@ export async function getCertification(): Promise<Certification[]> {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/certification`, {
             method: "GET",
             next: {
-                revalidate: 60,
+                revalidate: 3600,
                 tags: ['certification']
             },
             headers: {
@@ -49,7 +49,7 @@ export async function getSkills(): Promise<Skills[]> {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/skill`, {
             method: "GET",
             next: {
-                revalidate: 60,
+                revalidate: 3600,
                 tags: ['skill']
             },
             headers: {
@@ -73,7 +73,7 @@ export async function getProject(): Promise<Project[]> {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/project`, {
             method: "GET",
             next: {
-                revalidate: 60,
+                revalidate: 3600,
                 tags: ['project']
             },
             headers: {
