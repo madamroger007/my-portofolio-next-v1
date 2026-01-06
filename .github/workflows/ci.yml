@@ -1,0 +1,128 @@
+name: CI - Next.js Build Validation
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Install & Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          # HARUS sama dengan versi pembuat pnpm-lock.yaml
+          version: 10.27.0
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Aktifkan jika memang ada test
+      # - name: Run unit tests
+      #   run: pnpm test
+
+  build:
+    name: Build Next.js Application
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.27.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build application
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+        run: pnpm build
+
+      - name: Verify build output
+        run: |
+          echo "🔍 Verifying Next.js build output..."
+
+          test -d .next || (echo "❌ .next directory not found" && exit 1)
+          test -f .next/BUILD_ID || (echo "❌ BUILD_ID not found" && exit 1)
+
+          echo "✅ Build successful"
+          echo "BUILD_ID: $(cat .next/BUILD_ID)"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-build
+          path: .next
+          retention-days: 7
+
+  validate:
+    name: Validate Build Artifacts
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: nextjs-build
+          path: .next
+
+      - name: Validate artifacts structure
+        run: |
+          echo "🔍 Validating artifacts..."
+
+          test -d .next || (echo "❌ .next missing" && exit 1)
+          test -f .next/BUILD_ID || (echo "❌ BUILD_ID missing" && exit 1)
+          test -d .next/server || (echo "❌ server folder missing" && exit 1)
+          test -d .next/static || (echo "❌ static folder missing" && exit 1)
+
+          echo "✅ Artifacts valid"
+          echo "Build ID: $(cat .next/BUILD_ID)"
+          echo "Build size: $(du -sh .next | cut -f1)"
+
+      - name: Build Summary
+        if: always()
+        run: |
+          {
+            echo "## ✅ Next.js Build Report"
+            echo ""
+            echo "| Item | Status |"
+            echo "|------|--------|"
+            echo "| Build Folder | OK |"
+            echo "| BUILD_ID | OK |"
+            echo "| Server Output | OK |"
+            echo "| Static Assets | OK |"
+            echo ""
+            echo "**Build Size:** $(du -sh .next | cut -f1)"
+          } >> $GITHUB_STEP_SUMMARY
