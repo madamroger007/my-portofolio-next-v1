@@ -67,7 +67,13 @@ jobs:
       - name: Build application
         env:
           NEXT_TELEMETRY_DISABLED: 1
-          API_URL: https://porto.adamstd.my.id/api
+          NEXT_PUBLIC_URL_PRODUCTION: "https://www.adamstd.my.id"
+          URL_LOCAL: "http://localhost:3000"
+          URL_IMG_OPENGRAPH: "/src/img/icon/madamroger.svg"
+          URL_IMG_TWITTER: "/src/img/icon/madamroger.svg"
+          API_URL: "https://porto.adamstd.my.id/api"
+          TOKEN_APP: "my-secure-api-token12312312313213%%%%$$$$$^^^^^&&&&&****"
+          TOKEN_ACCESS_API: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJxb3hwMmVyeDdnZWh3bHoyeXZxcm1vc3giLCJ0aCI6Ilo0Rk14UmU5TmoyYW5jck9fLUlkNjJSYlRGRUdBTktPVEdoSTRCa2w3R2siLCJpYXQiOjE3NjQyNTQ4MTl9.kto9MvwFCnxmndJdH-LnpdN6t1WA9v9BQko-AubLnnY"
         run: pnpm build
 
       - name: Verify build output
@@ -86,44 +92,3 @@ jobs:
           name: nextjs-build
           path: .next
           retention-days: 7
-
-  validate:
-    name: Validate Build Artifacts
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: nextjs-build
-          path: .next
-
-      - name: Validate artifacts structure
-        run: |
-          echo "🔍 Validating artifacts..."
-
-          test -d .next || (echo "❌ .next missing" && exit 1)
-          test -f .next/BUILD_ID || (echo "❌ BUILD_ID missing" && exit 1)
-          test -d .next/server || (echo "❌ server folder missing" && exit 1)
-          test -d .next/static || (echo "❌ static folder missing" && exit 1)
-
-          echo "✅ Artifacts valid"
-          echo "Build ID: $(cat .next/BUILD_ID)"
-          echo "Build size: $(du -sh .next | cut -f1)"
-
-      - name: Build Summary
-        if: always()
-        run: |
-          {
-            echo "## ✅ Next.js Build Report"
-            echo ""
-            echo "| Item | Status |"
-            echo "|------|--------|"
-            echo "| Build Folder | OK |"
-            echo "| BUILD_ID | OK |"
-            echo "| Server Output | OK |"
-            echo "| Static Assets | OK |"
-            echo ""
-            echo "**Build Size:** $(du -sh .next | cut -f1)"
-          } >> $GITHUB_STEP_SUMMARY
