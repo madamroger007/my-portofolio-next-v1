@@ -67,6 +67,7 @@ jobs:
       - name: Build application
         env:
           NEXT_TELEMETRY_DISABLED: 1
+          API_URL: https://porto.adamstd.my.id/api
         run: pnpm build
 
       - name: Verify build output
