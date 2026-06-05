@@ -27,6 +27,7 @@ const config = {
         poppins: ["Poppins", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
         sora: ["Sora", "sans-serif"],
+        Newsreader: ["Newsreader", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
