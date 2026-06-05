@@ -16,11 +16,23 @@ const CardProject: React.FC<Project> = (items) => {
         </h2>
         <p className='truncate ... hover:overflow-visible hover:text-wrap'>{items.description}</p>
         <div className="card-actions justify-end flex pt-5" >
-          {items.icons.map((icon: Icons) => (
-            <TooltipComponent key={icon.name} tooltip={icon.name}>
-              <img src={icon.url} alt="" className="badge bg-transparent  border-transparent  grayscale hover:grayscale-0 " />
-            </TooltipComponent>
-          ))}
+          {items.icons.map((icon: Icons | string, index) => {
+            const iconName = typeof icon === "string" ? icon.match(/name:\s*"([^"]+)"/)?.[1] ?? icon : icon.name;
+
+            if (typeof icon === "string") {
+              return (
+                <span key={`${iconName}-${index}`} className="badge border-transparent bg-transparent">
+                  {iconName}
+                </span>
+              );
+            }
+
+            return (
+              <TooltipComponent key={icon.name} tooltip={icon.name}>
+                <img src={icon.url} alt="" className="badge bg-transparent  border-transparent  grayscale hover:grayscale-0 " />
+              </TooltipComponent>
+            );
+          })}
         </div>
       </div>
     </Link>

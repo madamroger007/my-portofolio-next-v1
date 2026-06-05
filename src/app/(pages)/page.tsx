@@ -9,12 +9,14 @@ import ProjectSection from "./_section/ProjectSection";
 import { IconHero } from "@/src/components/elemen/img/Icon";
 import CardRoundedItem from "@/src/components/elemen/card/CardRoundeditem";
 import ArrowButton from "@/src/components/elemen/button/ArrowButton";
+import { getProject } from "@/src/utils/getApiRequest";
 
 export const metadata: Metadata = {
   title: "Home"
 }
 
-export default function Home() {
+export default async function Home() {
+    const getDataProject = await getProject();
   return (
     <LayoutComponent>
       <section className="grid w-full py-10">
@@ -33,7 +35,7 @@ export default function Home() {
         <DeviceInfoSection />
         <GameIntroSection />
         <PlaylistGameSection />
-        <ProjectSection />
+        <ProjectSection projects={getDataProject } />
 
       </section>
 

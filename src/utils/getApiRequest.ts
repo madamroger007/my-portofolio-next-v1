@@ -83,7 +83,7 @@ export async function getProject(): Promise<Project[]> {
             }
         });
         const data = await response.json();
-        return data.data;
+        return Array.isArray(data.data) ? data.data : [];
     } catch (error) {
         console.error("Error fetching project data:", error);
         return [];

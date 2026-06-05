@@ -129,7 +129,7 @@ const GameIntroSection = () => {
 
     return (
         <section className="w-full ">
-            <div className="relative mx-auto min-h-[680px] max-w-6xl overflow-hidden bg-[url(/src/img/game/bg.jpg)] bg-cover bg-center px-5 pb-6 pt-6 text-white shadow-2xl md:px-12 md:pt-9">
+            <div className="relative mx-auto overflow-hidden bg-[url(/src/img/game/bg.jpg)] bg-cover bg-center px-5 pb-6 pt-6 text-white shadow-2xl md:px-12 md:pt-9">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_5%,rgba(148,163,184,0.28),transparent_28%),radial-gradient(circle_at_74%_52%,rgba(20,184,166,0.24),transparent_28%),linear-gradient(115deg,rgba(2,6,23,0.35),rgba(15,23,42,0.86))]" />
                 <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.08)_48%,transparent_49%),linear-gradient(25deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:180px_180px,36px_36px]" />
                 <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-slate-950 to-transparent" />

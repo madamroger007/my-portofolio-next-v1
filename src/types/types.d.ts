@@ -62,5 +62,5 @@ export type Project = {
     title: string;
     subtitle: string;
   } | null;
-  icons: Icons[]
+  icons: Array<Icons | string>
 }

@@ -1,17 +1,17 @@
 "use client";
 
+import { Project } from "@/src/types/types";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CalendarDays, Github, Layers3, Tag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useProjects, type FeaturedProject } from "@/src/hooks/useProjects";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
     visible: { opacity: 1, y: 0 },
 };
 
-const formatYear = (date?: string) => {
+const formatYear = (date?: string | null | undefined) => {
     if (!date) {
         return "Project";
     }
@@ -25,7 +25,7 @@ const formatYear = (date?: string) => {
     return parsedDate.getFullYear().toString();
 };
 
-const getIconName = (icon: FeaturedProject["icons"][number]) => {
+const getIconName = (icon: Project["icons"][number]) => {
     if (typeof icon !== "string") {
         return icon.name;
     }
@@ -68,7 +68,7 @@ const StateCard = ({ message }: { message: string }) => (
     </div>
 );
 
-const ProjectCard = ({ project, index }: { project: FeaturedProject; index: number }) => (
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
     <motion.article
         variants={fadeUp}
         transition={{ duration: 0.42, delay: index * 0.06 }}
@@ -115,7 +115,7 @@ const ProjectCard = ({ project, index }: { project: FeaturedProject; index: numb
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                    {project.icons.map((icon, iconIndex) => {
+                    {(project.icons ?? []).map((icon, iconIndex) => {
                         const technology = getIconName(icon);
 
                         return (
@@ -133,6 +133,7 @@ const ProjectCard = ({ project, index }: { project: FeaturedProject; index: numb
                     <Link
                         href={project.url}
                         target="_blank"
+                        rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-500/30 bg-cyan-400/10 px-4 py-3 font-poppins text-sm font-extrabold text-cyan-700 shadow-[inset_-24px_0_0_rgba(255,255,255,0.38)] transition hover:bg-cyan-400/20 dark:border-cyan-300 dark:text-cyan-200 dark:shadow-[inset_-24px_0_0_rgba(10,10,10,0.35)]"
                     >
                         View Project
@@ -141,6 +142,7 @@ const ProjectCard = ({ project, index }: { project: FeaturedProject; index: numb
                     <Link
                         href={project.url}
                         target="_blank"
+                        rel="noreferrer"
                         aria-label={`${project.title} GitHub repository`}
                         className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-300/80 bg-white/60 px-4 py-3 font-poppins text-sm font-extrabold text-slate-700 transition hover:border-cyan-500/40 hover:text-cyan-700 dark:border-white/15 dark:bg-black/20 dark:text-white/78 dark:hover:text-cyan-200"
                     >
@@ -153,9 +155,7 @@ const ProjectCard = ({ project, index }: { project: FeaturedProject; index: numb
     </motion.article>
 );
 
-const ProjectSection = () => {
-    const { projects, isLoading, error } = useProjects();
-
+const ProjectSection = ({ projects = [] }: { projects?: Project[] }) => {
     return (
         <motion.section
             id="projects"
@@ -181,28 +181,15 @@ const ProjectSection = () => {
                 </motion.div>
 
                 <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {isLoading &&
-                        [0, 1, 2].map((item) => (
-                            <ProjectSkeleton key={item} />
-                        ))}
-
-                    {!isLoading && error && (
-                        <div className="md:col-span-2 xl:col-span-3">
-                            <StateCard message="Failed to load project data." />
-                        </div>
-                    )}
-
-                    {!isLoading && !error && projects.length === 0 && (
+                    {projects.length === 0 && (
                         <div className="md:col-span-2 xl:col-span-3">
                             <StateCard message="No projects available." />
                         </div>
                     )}
 
-                    {!isLoading &&
-                        !error &&
-                        projects.map((project, index) => (
-                            <ProjectCard key={project.id} project={project} index={index} />
-                        ))}
+                    {projects.map((project, index) => (
+                        <ProjectCard key={project.id ?? project.url} project={project} index={index} />
+                    ))}
                 </div>
             </div>
         </motion.section>
